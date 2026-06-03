@@ -1,0 +1,148 @@
+/* ─── Admin Layout ──────────────────────────────────────────────────────────── */
+
+.shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+/* ─── Sidebar ─────────────────────────────────────────────────────────────── */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  background: #1e293b;
+  color: #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: transform 0.25s ease;
+  z-index: 200;
+}
+
+/* ─── Brand ───────────────────────────────────────────────────────────────── */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #334155;
+}
+.brandIcon  { font-size: 1.75rem; }
+.brandText  { display: flex; flex-direction: column; }
+.brandTitle { font-size: 1rem; font-weight: 700; color: #f8fafc; }
+.brandSub   { font-size: 0.7rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* ─── User info ───────────────────────────────────────────────────────────── */
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem;
+  background: #0f172a;
+  border-bottom: 1px solid #334155;
+}
+.userAvatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: #3b82f6;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; font-weight: 700; color: #fff;
+  flex-shrink: 0;
+}
+.userDetails { display: flex; flex-direction: column; overflow: hidden; }
+.userName   { font-size: 0.8rem; font-weight: 600; color: #f1f5f9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.userRole   { font-size: 0.7rem; color: #64748b; text-transform: capitalize; }
+
+/* ─── Nav ─────────────────────────────────────────────────────────────────── */
+.nav { flex: 1; padding: 0.5rem 0; }
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.625rem 1rem;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.875rem;
+  border-radius: 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  transition: background 0.12s, color 0.12s;
+}
+.navItem:hover { background: #334155; color: #f1f5f9; }
+.navActive     { background: #1d4ed8 !important; color: #fff !important; }
+.navIcon  { font-size: 1rem; width: 1.25rem; text-align: center; flex-shrink: 0; }
+.navLabel { flex: 1; }
+
+/* ─── Sidebar footer ──────────────────────────────────────────────────────── */
+.sidebarFooter {
+  border-top: 1px solid #334155;
+  padding: 0.5rem 0;
+}
+.signOutBtn {
+  display: flex; align-items: center; gap: 0.625rem;
+  width: 100%; padding: 0.625rem 1rem;
+  background: none; border: none; cursor: pointer;
+  color: #f87171; font-size: 0.875rem;
+  transition: background 0.12s;
+}
+.signOutBtn:hover { background: #450a0a; }
+
+/* ─── Main area ───────────────────────────────────────────────────────────── */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ─── Mobile topbar ───────────────────────────────────────────────────────── */
+.topbar {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: #1e293b;
+  color: #f1f5f9;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.menuBtn       { background: none; border: none; color: #f1f5f9; font-size: 1.25rem; cursor: pointer; padding: 0.25rem; }
+.topbarTitle   { flex: 1; font-weight: 600; }
+.topbarSignOut { background: none; border: none; color: #94a3b8; font-size: 0.8rem; cursor: pointer; }
+.topbarSignOut:hover { color: #f87171; }
+
+/* ─── Page content ────────────────────────────────────────────────────────── */
+.content { flex: 1; }
+
+/* ─── Overlay (mobile) ────────────────────────────────────────────────────── */
+.overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 199;
+}
+
+/* ─── Loading splash ──────────────────────────────────────────────────────── */
+.splash {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 100vh; font-size: 1rem; color: #64748b;
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    transform: translateX(-100%);
+  }
+  .sidebarOpen { transform: translateX(0); }
+  .topbar      { display: flex; }
+}

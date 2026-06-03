@@ -1,0 +1,70 @@
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--wh);
+  border: 1px solid var(--st);
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.12);
+  min-width: 230px;
+  z-index: 500;
+  padding: .5rem 0;
+  animation: ddSlide .15s ease;
+}
+/* Show on hover AND keyboard focus-within AND explicit open state */
+:global(li):hover .dropdown,
+:global(li):focus-within .dropdown { display: block; }
+.dropdownOpen { display: block !important; }
+
+/* Bridge gap */
+:global(li)::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0; right: 0;
+  height: 12px;
+  background: transparent;
+}
+
+.dropdown a,
+.dropdown button {
+  display: block;
+  width: 100%;
+  padding: .48rem 1.1rem;
+  font-size: .84rem;
+  font-family: inherit;
+  color: var(--im);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 4px;
+  transition: background .15s, color .15s, padding-left .15s;
+}
+.dropdown a:hover,
+.dropdown button:hover {
+  background: var(--cd);
+  color: var(--m);
+  padding-left: 1.45rem;
+}
+
+.divider { height: 1px; background: var(--st); margin: .4rem .8rem; }
+
+.label {
+  font-size: .66rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--is);
+  padding: .5rem 1.1rem .2rem;
+  display: block;
+}
+
+.active {
+  color: var(--m) !important;
+  background: rgba(123,29,29,.05) !important;
+  box-shadow: inset 0 -2.5px 0 var(--m) !important;
+  font-weight: 700 !important;
+}

@@ -1,0 +1,81 @@
+.footer {
+  background: var(--md);
+  color: rgba(255,255,255,.82);
+  padding-top: 3.5rem;
+  margin-top: 4rem;
+}
+.inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.1fr;
+  gap: 2.5rem;
+  padding: 0 clamp(1.5rem,6vw,5rem) 2.5rem;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.brand { display: flex; align-items: flex-start; gap: 1rem; }
+.logo { width: 58px; height: 58px; border-radius: 50%; object-fit: contain; border: 2px solid rgba(255,255,255,.2); flex-shrink: 0; }
+.name { font-family: "EB Garamond", serif; font-size: 1rem; font-weight: 700; color: white; line-height: 1.25; margin-bottom: .3rem; }
+.motto { font-size: .78rem; color: var(--gl); font-style: italic; }
+.mottoEn { font-size: .72rem; color: rgba(255,255,255,.5); margin-bottom: .5rem; }
+.naac { font-size: .7rem; color: rgba(255,255,255,.6); background: rgba(255,255,255,.1); padding: 3px 9px; border-radius: 20px; display: inline-block; margin-bottom: .7rem; }
+.social { display: flex; gap: .6rem; margin-top: .2rem; }
+.social a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: rgba(255,255,255,.08); border-radius: 50%; font-size: .95rem; transition: background .2s, transform .2s; text-decoration: none; }
+.social a:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+.col { display: flex; flex-direction: column; gap: 0; }
+.colHead {
+  font-size: .67rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gl);
+  margin-bottom: .8rem;
+  font-family: "EB Garamond", serif;
+  letter-spacing: .05em;
+}
+.link {
+  font-size: .8rem;
+  color: rgba(255,255,255,.65);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  padding: .3rem 0;
+  transition: color .18s, padding-left .18s;
+}
+.link:hover { color: var(--gl); padding-left: 4px; }
+.address { font-style: normal; display: flex; flex-direction: column; gap: .45rem; margin-bottom: .8rem; }
+.address p { font-size: .79rem; color: rgba(255,255,255,.65); }
+.address a { color: rgba(255,255,255,.7); text-decoration: none; }
+.address a:hover { color: var(--gl); }
+.contactBtn {
+  background: var(--g);
+  color: var(--md);
+  border: none;
+  cursor: pointer;
+  font-family: "EB Garamond", serif;
+  font-size: .9rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  padding: .55rem 1.1rem;
+  border-radius: 5px;
+  transition: background .2s, transform .15s;
+  align-self: flex-start;
+}
+.contactBtn:hover { background: var(--gl); transform: translateY(-1px); }
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: .8rem;
+  padding: 1rem clamp(1.5rem,6vw,5rem);
+  font-size: .76rem;
+  color: rgba(255,255,255,.45);
+}
+.bottomLinks { display: flex; gap: 1rem; }
+.bottomLinks a { color: rgba(255,255,255,.5); text-decoration: none; transition: color .18s; }
+.bottomLinks a:hover { color: var(--gl); }
+
+@media(max-width:1100px){ .inner { grid-template-columns: 1fr 1fr; } }
+@media(max-width:640px)  { .inner { grid-template-columns: 1fr; } .bottom { flex-direction: column; text-align: center; } }

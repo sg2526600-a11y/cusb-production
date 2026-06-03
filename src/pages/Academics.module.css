@@ -1,0 +1,29 @@
+.section { padding: clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem); background: var(--wh); }
+.pre { font-size:.69rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--m);margin-bottom:.5rem; }
+.title { font-family:"EB Garamond",serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--md);margin-bottom:.8rem; }
+.rule { width:56px;height:3px;background:linear-gradient(90deg,var(--m),var(--g));border-radius:2px;margin-bottom:2rem; }
+.progGrid { display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.3rem; }
+.progCard { background:var(--cr);border:1.5px solid var(--st);border-radius:12px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.7rem;transition:transform .25s,box-shadow .25s,border-color .25s; }
+.progCard:hover { transform:translateY(-4px);box-shadow:0 12px 36px rgba(123,29,29,.1);border-color:rgba(123,29,29,.25); }
+.progIcon { font-size:2rem; }
+.progCard h3 { font-family:"EB Garamond",serif;font-size:1.2rem;font-weight:700;color:var(--md); }
+.progCard p { font-size:.84rem;color:var(--im);line-height:1.6; }
+.progMeta { display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem; }
+.progMeta span { font-size:.7rem;background:rgba(123,29,29,.07);color:var(--m);padding:3px 9px;border-radius:20px;font-weight:600; }
+
+.hlSection { padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem);background:var(--cr); }
+.hlTitle { font-family:"EB Garamond",serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--md);margin-bottom:1.5rem; }
+.hlGrid { display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem; }
+.hlCard { display:flex;align-items:center;gap:.9rem;padding:1.1rem 1.2rem;background:var(--wh);border:1px solid var(--st);border-radius:8px;transition:transform .2s,box-shadow .2s; }
+.hlCard:hover { transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.07); }
+.hlCard span { font-size:1.5rem;flex-shrink:0; }
+.hlCard p { font-size:.84rem;color:var(--im);line-height:1.5; }
+
+.deptCta { padding:clamp(3rem,6vw,4rem) clamp(1.5rem,6vw,5rem);background:var(--md);text-align:center;color:white; }
+.deptCta h2 { font-family:"EB Garamond",serif;font-size:clamp(1.7rem,3.5vw,2.4rem);font-weight:700;margin-bottom:.6rem; }
+.deptCta p { font-size:.95rem;color:rgba(255,255,255,.75);margin-bottom:1.5rem; }
+.ctaRow { display:flex;gap:1rem;justify-content:center;flex-wrap:wrap; }
+.btn { background:var(--g);color:var(--md);border:none;cursor:pointer;font-family:"EB Garamond",serif;font-size:1rem;font-weight:700;letter-spacing:.04em;padding:.75rem 2rem;border-radius:6px;transition:background .2s,transform .15s; }
+.btn:hover { background:var(--gl);transform:translateY(-1px); }
+.btnSec { background:rgba(255,255,255,.12);color:white;border:1.5px solid rgba(255,255,255,.3);text-decoration:none;font-weight:600;font-size:.9rem;padding:.75rem 1.8rem;border-radius:6px;transition:background .2s; }
+.btnSec:hover { background:rgba(255,255,255,.22); }

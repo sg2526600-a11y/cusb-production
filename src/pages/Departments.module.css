@@ -1,0 +1,11 @@
+.section { padding: clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(280px,1fr)); gap: 1.3rem; }
+.card { background: var(--wh); border: 1.5px solid var(--st); border-radius: 12px; overflow: hidden; transition: transform .25s, box-shadow .25s, border-color .25s; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(123,29,29,.1); border-color: rgba(123,29,29,.25); }
+.cardHead { background: linear-gradient(135deg, var(--md) 0%, var(--m) 100%); padding: 1.1rem 1.3rem; display: flex; align-items: center; gap: .85rem; }
+.icon { font-size: 1.5rem; flex-shrink: 0; }
+.schoolName { font-family: "EB Garamond", serif; font-size: 1.02rem; font-weight: 700; color: white; line-height: 1.3; }
+.deptList { list-style: none; padding: .8rem 1.3rem 1.1rem; display: flex; flex-direction: column; gap: .05rem; }
+.deptList li a { font-size: .84rem; color: var(--im); text-decoration: none; display: flex; align-items: center; gap: .5rem; padding: .42rem .5rem; border-radius: 5px; transition: color .18s, background .18s, padding-left .18s; }
+.deptList li a:hover { color: var(--m); background: rgba(123,29,29,.05); padding-left: .9rem; }
+.arrow { color: var(--g); font-size: .78rem; flex-shrink: 0; }

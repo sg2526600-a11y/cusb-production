@@ -1,0 +1,165 @@
+/* ─── Card shell ──────────────────────────────────────────────────────────── */
+.card {
+  background: var(--wh);
+  border: 1px solid var(--st);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-base);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(123, 29, 29, 0.1);
+  border-color: rgba(123, 29, 29, 0.22);
+}
+
+/* ─── Avatar block ────────────────────────────────────────────────────────── */
+.avatar {
+  width: 100%;
+  aspect-ratio: 1 / 0.75;
+  background: linear-gradient(135deg, var(--cd) 0%, var(--st) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+  /* Subtle inner border */
+  border-bottom: 1px solid var(--st);
+}
+
+.avatarEmoji {
+  font-size: 3.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* HoD badge */
+.headBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--m);
+  color: white;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 8px rgba(123, 29, 29, 0.3);
+}
+
+/* ─── Body ────────────────────────────────────────────────────────────────── */
+.body {
+  padding: 1.1rem 1.2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0;
+}
+
+/* Designation pill */
+.desg {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.desgProf {
+  background: rgba(123, 29, 29, 0.1);
+  color: var(--m);
+  border: 1px solid rgba(123, 29, 29, 0.2);
+}
+
+.desgAssoc {
+  background: rgba(200, 146, 42, 0.1);
+  color: #8a6010;
+  border: 1px solid rgba(200, 146, 42, 0.3);
+}
+
+.desgAsst {
+  background: var(--cd);
+  color: var(--im);
+  border: 1px solid var(--st);
+}
+
+/* Name */
+.name {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  margin-bottom: 5px;
+}
+
+/* Department */
+.dept {
+  font-size: 0.76rem;
+  color: var(--m);
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+/* Specialisation */
+.spec {
+  font-size: 0.74rem;
+  color: var(--is);
+  line-height: 1.5;
+  margin-bottom: auto;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--st);
+  min-height: 2.5rem;
+}
+
+/* ─── Action bar ──────────────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.action {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--im);
+  background: var(--cd);
+  border: 1px solid var(--st);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  text-decoration: none;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.action:hover {
+  background: rgba(123, 29, 29, 0.08);
+  color: var(--m);
+  border-color: rgba(123, 29, 29, 0.25);
+}
+
+.actionProfile {
+  color: var(--m);
+  background: rgba(123, 29, 29, 0.06);
+  border-color: rgba(123, 29, 29, 0.2);
+  margin-left: auto;
+}
+
+.actionProfile:hover {
+  background: var(--m);
+  color: white;
+  border-color: var(--m);
+}

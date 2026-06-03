@@ -1,0 +1,86 @@
+.menu {
+  position: fixed;
+  top: calc(var(--th) + var(--nh));
+  left: 0; right: 0;
+  background: var(--wh);
+  border-top: 2px solid var(--m);
+  box-shadow: 0 12px 40px rgba(0,0,0,.15);
+  z-index: 290;
+  max-height: calc(100vh - var(--th) - var(--nh));
+  overflow-y: auto;
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .22s ease, opacity .22s ease;
+}
+.menu.open { transform: none; opacity: 1; pointer-events: auto; }
+
+.section { border-bottom: 1px solid var(--st); }
+
+.toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: .9rem 1.4rem;
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--im);
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background .15s, color .15s;
+}
+.toggle:hover, .toggle.open { color: var(--m); background: rgba(123,29,29,.04); }
+
+.arr { font-size: .7rem; opacity: .6; transition: transform .2s; }
+.open .arr { transform: rotate(180deg); }
+
+.sub {
+  padding: .4rem 0 .7rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.sub a,
+.sub button {
+  font-size: .85rem;
+  color: var(--im);
+  text-decoration: none;
+  padding: .45rem .8rem;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: color .15s, background .15s;
+}
+.sub a:hover, .sub button:hover { color: var(--m); background: rgba(123,29,29,.05); }
+.subLabel {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--is);
+  padding: .6rem .8rem .2rem;
+}
+
+.cta {
+  padding: 1.1rem 1.4rem;
+  text-align: center;
+}
+.cta a {
+  display: block;
+  background: var(--m);
+  color: white;
+  padding: .75rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+  letter-spacing: .02em;
+}
+.cta a:hover { background: var(--md); }

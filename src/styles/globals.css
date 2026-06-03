@@ -1,0 +1,512 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   CUSB Global Styles — Design Token Layer
+   All colour, spacing, and typography tokens defined here as CSS custom props.
+   Components use tokens; never hard-code raw values.
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Fonts ──────────────────────────────────────────────────────────────── */
+/* Loaded via <link> in index.html — EB Garamond, DM Sans, Noto Sans Devanagari */
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────── */
+:root {
+  /* Palette */
+  --m:  #7B1D1D;   /* maroon primary */
+  --md: #5A1313;   /* maroon dark */
+  --ml: #A52A2A;   /* maroon light */
+  --g:  #C8922A;   /* gold */
+  --gl: #E8B84B;   /* gold light */
+
+  /* Surface */
+  --cr: #FAF7F2;   /* cream */
+  --cd: #F0EBE1;   /* cream dark */
+  --st: #E8E0D5;   /* stone / border */
+
+  /* Text */
+  --ink: #1C1C1C;
+  --im:  #3D3530;
+  --is:  #6B5E55;
+
+  /* Global */
+  --wh: #FFFFFF;
+  --nh: 72px;      /* nav main height */
+  --th: 40px;      /* top bar height */
+
+  /* Devanagari font */
+  --hi: 'Noto Sans Devanagari', Mangal, 'Arial Unicode MS', sans-serif;
+}
+
+/* ─── Reset ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--cr);
+  color: var(--ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── Grain texture overlay ──────────────────────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  opacity: 0.3;
+}
+
+/* ─── Focus ring ─────────────────────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid var(--g);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cr); }
+::-webkit-scrollbar-thumb { background: var(--st); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--is); }
+
+/* ─── Typography base ────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "EB Garamond", serif;
+  line-height: 1.2;
+}
+
+a { color: inherit; }
+
+/* ─── Bilingual system ───────────────────────────────────────────────────── */
+
+/* All Hindi spans hidden by default */
+.bi-hi {
+  display: none !important;
+  font-family: var(--hi);
+  font-size: 0.8em;
+  color: var(--gl);
+  font-weight: 600;
+  line-height: 1.5;
+  opacity: 1;
+  letter-spacing: 0.005em;
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Show when <html data-lang="hi"> */
+[data-lang="hi"] .bi-hi { display: block !important; }
+
+/* Logo in Hindi mode */
+[data-lang="hi"] .logo-t .bi-hi {
+  font-size: 1.12rem;
+  color: var(--g);
+  font-weight: 800;
+  text-shadow: 0 1px 4px rgba(0,0,0,.12);
+}
+
+/* Logo always shows Hindi name (bilingual branding) */
+.logo-t .bi-hi { display: block !important; }
+[data-lang="en"] .logo-t .bi-hi { display: block !important; }
+
+/* Stat labels */
+.sl-hi { display: none; font-family: var(--hi); font-size: .65rem; color: var(--is); font-weight: 500; line-height: 1.3; }
+[data-lang="hi"] .sl-hi { display: block; }
+[data-lang="hi"] .sl-en { display: none; }
+
+/* Hero Hindi line */
+.hero-hi-line {
+  display: none;
+  font-family: "Noto Sans Devanagari", var(--hi), sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.35rem);
+  color: var(--gl);
+  font-weight: 600;
+  margin-bottom: .5rem;
+  letter-spacing: .01em;
+  line-height: 1.5;
+  text-shadow: 0 1px 4px rgba(0,0,0,.18);
+}
+[data-lang="hi"] .hero-hi-line { display: block; }
+
+/* Footer */
+.ft-hi {
+  display: none;
+  font-family: "Noto Sans Devanagari", var(--hi), sans-serif;
+  font-size: .8rem;
+  color: var(--g);
+  margin-bottom: 3px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+[data-lang="hi"] .ft-hi { display: block; }
+
+/* Footer column headings */
+.fch-hi { display: none; font-family: var(--hi); font-size: .75rem; color: var(--g); font-weight: 700; margin-bottom: .5rem; letter-spacing: .01em; }
+[data-lang="hi"] .fch-hi { display: block; }
+[data-lang="hi"] .fch-en { display: none; }
+
+/* Nav label stacking */
+.nl-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.nl-btn-wrap .bi-hi {
+  font-size: .72rem;
+  text-align: center;
+  color: var(--gl);
+  margin-bottom: 2px;
+  letter-spacing: .01em;
+  font-weight: 600;
+  opacity: 1;
+  line-height: 1.3;
+}
+[data-lang="hi"] .nl-btn-wrap .bi-hi { font-size: .75rem; color: var(--g); font-weight: 700; opacity: 1; }
+.nl-btn-wrap .bi-en { display: block; text-align: center; line-height: 1.2; }
+/* Nav items always show Hindi label (bilingual nav) */
+.nl-btn-wrap .bi-hi { display: block !important; }
+
+/* ─── Scroll Reveal ──────────────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.55s cubic-bezier(.4,0,.2,1), transform 0.55s cubic-bezier(.4,0,.2,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Stagger: applies delay to direct children */
+.reveal-stagger { opacity: 0; transform: translateY(18px); transition: opacity 0.55s cubic-bezier(.4,0,.2,1), transform 0.55s cubic-bezier(.4,0,.2,1); }
+.reveal-stagger.visible { opacity: 1; transform: none; }
+.reveal-stagger.visible > * { animation: revealChild 0.5s cubic-bezier(.4,0,.2,1) both; }
+.reveal-stagger.visible > *:nth-child(1) { animation-delay: 0.05s; }
+.reveal-stagger.visible > *:nth-child(2) { animation-delay: 0.12s; }
+.reveal-stagger.visible > *:nth-child(3) { animation-delay: 0.19s; }
+.reveal-stagger.visible > *:nth-child(4) { animation-delay: 0.26s; }
+.reveal-stagger.visible > *:nth-child(5) { animation-delay: 0.33s; }
+.reveal-stagger.visible > *:nth-child(6) { animation-delay: 0.40s; }
+@keyframes revealChild {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal, .reveal-stagger { opacity: 1; transform: none; transition: none; }
+}
+
+/* ─── Loading screen ─────────────────────────────────────────────────────── */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: var(--md);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+#loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.loader-logo { width: 72px; height: 72px; border-radius: 50%; object-fit: contain; animation: loaderPulse 1.2s ease infinite; }
+.loader-text { font-family: "EB Garamond", serif; color: white; font-size: 1.2rem; opacity: .8; }
+@keyframes loaderPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.05);opacity:.8} }
+
+/* ─── Scroll progress bar ────────────────────────────────────────────────── */
+#scroll-prog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--m), var(--g));
+  z-index: 9999;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+/* ─── Back-to-top button ─────────────────────────────────────────────────── */
+#btt {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--m);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 400;
+  opacity: 0;
+  transform: translateY(12px) scale(.9);
+  transition: opacity .3s, transform .3s, background .2s;
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(123,29,29,.35);
+}
+#btt.show { opacity: 1; transform: none; pointer-events: auto; }
+#btt:hover { background: var(--md); box-shadow: 0 6px 24px rgba(123,29,29,.45); }
+#btt svg { width: 16px; height: 16px; stroke: white; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+@media(max-width:768px){ #btt { bottom: 1.4rem; right: 1.2rem; width: 38px; height: 38px; } }
+
+/* ─── Navbar scrolled state ──────────────────────────────────────────────── */
+#nb { transition: transform .3s ease; }
+#nb.scrolled {
+  box-shadow: 0 4px 30px rgba(0,0,0,.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255,255,255,.92);
+}
+
+/* ─── Section shared ─────────────────────────────────────────────────────── */
+section { padding: clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem); }
+.rule { height: 1px; background: var(--st); margin: 0 clamp(1.5rem,6vw,5rem); }
+
+/* ─── Animations ─────────────────────────────────────────────────────────── */
+@keyframes kb     { from{transform:scale(1)} to{transform:scale(1.07)} }
+@keyframes fu     { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
+@keyframes hero-el{ from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:none} }
+@keyframes stat-in{ from{opacity:0;transform:translateX(24px)} to{opacity:1;transform:none} }
+@keyframes sweep  { 0%{left:-60%} 100%{left:140%} }
+@keyframes ddSlide{ from{opacity:0;transform:translateY(-4px)} to{opacity:1;transform:translateY(0)} }
+@keyframes sqaSlide{from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)}}
+@keyframes sqaPulse{0%,100%{opacity:1} 50%{opacity:.35}}
+@keyframes dsPulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+/* Improved card transitions */
+.card-transition {
+  transition:
+    transform .28s cubic-bezier(.4,0,.2,1),
+    box-shadow .28s cubic-bezier(.4,0,.2,1),
+    border-color .28s ease;
+}
+
+/* ─── Extended Design Tokens (from CUSB React Migration) ─────────────────── */
+:root {
+  /* Radius */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-pill: 20px;
+
+  /* Shadows */
+  --shadow-sm:         0 2px 8px rgba(0,0,0,.06);
+  --shadow-md:         0 6px 20px rgba(0,0,0,.10);
+  --shadow-lg:         0 12px 40px rgba(0,0,0,.14);
+  --shadow-maroon-sm:  0 3px 12px rgba(123,29,29,.08);
+  --shadow-maroon-md:  0 6px 20px rgba(123,29,29,.18);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.22s ease;
+  --transition-slow: 0.40s ease;
+
+  /* Z-index scale */
+  --z-dropdown: 200;
+  --z-navbar:   299;
+  --z-topbar:   300;
+  --z-mega:     500;
+  --z-chatbot:  9998;
+  --z-fab:      9999;
+}
+
+/* ─── Section Typography Utilities ──────────────────────────────────────── */
+/* Eyebrow label above section headings */
+.s-eye {
+  font-size: .71rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--m);
+  margin-bottom: .6rem;
+  display: block;
+}
+
+/* Section title */
+.s-ttl {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -.01em;
+}
+
+/* Section description */
+.s-dsc {
+  font-size: .98rem;
+  color: var(--is);
+  max-width: 620px;
+  margin-top: .7rem;
+  line-height: 1.72;
+}
+
+/* Section "view all" link */
+.s-lnk {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--m);
+  font-weight: 600;
+  font-size: .88rem;
+  background: none;
+  border: none;
+  border-bottom: 1.5px solid var(--m);
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0 0 2px;
+  transition: gap var(--transition-base);
+  text-decoration: none;
+}
+.s-lnk:hover { gap: 12px; }
+
+/* ─── Button System (adapted from CUSB React Migration) ─────────────────── */
+/* Primary — gold CTA */
+.btn-p {
+  background: var(--g);
+  color: var(--md);
+  font-weight: 700;
+  font-size: .9rem;
+  padding: 13px 30px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  letter-spacing: .03em;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition-base), transform .18s, box-shadow var(--transition-base);
+}
+.btn-p::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.25) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .5s ease;
+}
+.btn-p:hover::after { transform: translateX(100%); }
+.btn-p:hover { background: var(--gl); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(200,146,42,.3); }
+
+/* Outline — white ghost on dark backgrounds */
+.btn-o {
+  background: transparent;
+  color: white;
+  font-weight: 600;
+  font-size: .9rem;
+  padding: 12px 28px;
+  border: 2px solid rgba(255,255,255,.55);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all var(--transition-base);
+}
+.btn-o:hover { border-color: white; background: rgba(255,255,255,.1); }
+
+/* Ghost maroon */
+.btn-g {
+  background: var(--m);
+  color: white;
+  font-weight: 700;
+  font-size: .88rem;
+  padding: 10px 24px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition-base), transform .18s, box-shadow var(--transition-base);
+}
+.btn-g::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.25) 50%, transparent 70%);
+  transform: translateX(-100%);
+  transition: transform .5s ease;
+}
+.btn-g:hover::after { transform: translateX(100%); }
+.btn-g:hover { background: var(--md); transform: translateY(-2px); box-shadow: var(--shadow-maroon-md); }
+
+/* ─── Card Lift Hover Utility ────────────────────────────────────────────── */
+.card-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-maroon-sm);
+  border-color: rgba(123,29,29,.2) !important;
+}
+
+/* ─── Page Inner Header (for non-home pages) ─────────────────────────────── */
+.pg-ih {
+  background: linear-gradient(135deg, var(--md), #1a0505);
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 6vw, 5rem) clamp(2rem, 4vw, 3rem);
+}
+.pg-bc {
+  font-size: .75rem;
+  color: rgba(255,255,255,.5);
+  margin-bottom: .8rem;
+}
+.pg-bc span { color: rgba(255,255,255,.85); }
+.pg-ih h1 {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: white;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+.pg-ih p { font-size: .98rem; color: rgba(255,255,255,.75); max-width: 640px; line-height: 1.68; }
+
+/* ─── Pill Badge ─────────────────────────────────────────────────────────── */
+.pill { display: inline-block; padding: 3px 10px; border-radius: var(--radius-pill); font-size: .7rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+.pill-red   { background: var(--cd); color: var(--m); }
+.pill-green { background: #d1fae5; color: #065f46; }
+
+/* ─── Quick Access Pill Link ─────────────────────────────────────────────── */
+.sqa-pill {
+  font-size: .72rem;
+  font-weight: 600;
+  color: var(--im);
+  background: var(--cd);
+  border: 1px solid var(--st);
+  border-radius: var(--radius-pill);
+  padding: 3px 11px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+.sqa-pill:hover { background: var(--m); color: white; border-color: var(--m); }
+
+/* ─── Loading Skeleton ───────────────────────────────────────────────────── */
+.skeleton {
+  background: linear-gradient(90deg, var(--cd) 25%, var(--st) 50%, var(--cd) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}

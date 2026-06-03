@@ -1,0 +1,26 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 11px;
+  font-size: .7rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.55);
+  transition: .18s;
+  letter-spacing: .05em;
+  line-height: 1.7;
+  font-family: inherit;
+}
+.btn:hover { color: white; }
+.btn.on { background: rgba(255,255,255,.22); color: #fff; }
+.hi { font-family: var(--hi); font-size: .74rem; }

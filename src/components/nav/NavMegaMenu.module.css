@@ -1,0 +1,98 @@
+.mega {
+  display: none;
+  position: fixed;
+  left: 0; right: 0;
+  top: calc(var(--th) + var(--nh) - 2px);
+  background: var(--wh);
+  border-top: 2px solid var(--m);
+  border-bottom: 1px solid var(--st);
+  box-shadow: 0 16px 48px rgba(0,0,0,.14);
+  z-index: 500;
+  padding: 1.6rem clamp(1.5rem,6vw,5rem);
+  animation: ddSlide .18s ease;
+}
+:global(li):hover .mega,
+:global(li):focus-within .mega { display: block; }
+
+.grid {
+  display: grid;
+  gap: 1.5rem 2rem;
+}
+.grid3 { grid-template-columns: repeat(3, 1fr); }
+.grid4 { grid-template-columns: repeat(4, 1fr); }
+
+.col h6 {
+  font-size: .69rem;
+  font-weight: 700;
+  letter-spacing: .115em;
+  text-transform: uppercase;
+  color: var(--m);
+  margin-bottom: .75rem;
+  padding-bottom: .42rem;
+  border-bottom: 1.5px solid var(--cd);
+}
+.col ul { list-style: none; display: flex; flex-direction: column; gap: .1rem; }
+.col ul li a,
+.col ul li button {
+  display: block;
+  width: 100%;
+  padding: .42rem .6rem;
+  font-size: .84rem;
+  font-family: inherit;
+  color: var(--im);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: left;
+  letter-spacing: .01em;
+  transition: background .15s, color .15s, padding-left .15s;
+}
+.col ul li a:hover,
+.col ul li button:hover {
+  background: var(--cd);
+  color: var(--m);
+  padding-left: 1rem;
+}
+.col ul li a::before,
+.col ul li button::before {
+  content: '→';
+  color: var(--g);
+  font-size: .72rem;
+  margin-right: 6px;
+  opacity: .8;
+}
+
+.footer {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--st);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer a,
+.footer button {
+  font-size: .79rem;
+  color: var(--m);
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+.footer a:hover,
+.footer button:hover { text-decoration: underline; }
+
+.active {
+  color: var(--m) !important;
+  background: rgba(123,29,29,.05) !important;
+  box-shadow: inset 0 -2.5px 0 var(--m) !important;
+  font-weight: 700 !important;
+}

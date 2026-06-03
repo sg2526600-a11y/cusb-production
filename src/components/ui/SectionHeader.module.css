@@ -1,0 +1,29 @@
+.wrap { margin-bottom: 2.8rem; }
+.pre {
+  font-size: .69rem;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--m);
+  margin-bottom: .5rem;
+}
+.title {
+  font-family: "EB Garamond", serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: var(--md);
+  letter-spacing: -.01em;
+  line-height: 1.1;
+}
+.rule {
+  width: 56px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--m), var(--g));
+  border-radius: 2px;
+}
+.sub {
+  font-size: clamp(.9rem,1.6vw,1.05rem);
+  color: var(--is);
+  max-width: 560px;
+  line-height: 1.65;
+}

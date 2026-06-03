@@ -1,0 +1,18 @@
+.section { padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem);background:var(--wh); }
+.pre { font-size:.69rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--m);margin-bottom:.5rem; }
+.title { font-family:"EB Garamond",serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--md);margin-bottom:.8rem; }
+.rule { width:56px;height:3px;background:linear-gradient(90deg,var(--m),var(--g));border-radius:2px;margin-bottom:2rem; }
+.grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.3rem; }
+.card { background:var(--cr);border:1.5px solid var(--st);border-radius:12px;padding:1.6rem 1.4rem;display:flex;flex-direction:column;gap:.7rem;transition:transform .25s,box-shadow .25s,border-color .25s; }
+.card:hover { transform:translateY(-4px);box-shadow:0 12px 36px rgba(123,29,29,.1);border-color:rgba(123,29,29,.25); }
+.card span { font-size:2rem; }
+.card h3 { font-family:"EB Garamond",serif;font-size:1.1rem;font-weight:700;color:var(--md); }
+.card p { font-size:.84rem;color:var(--im);line-height:1.6; }
+.fac { padding:clamp(3rem,6vw,5rem) clamp(1.5rem,6vw,5rem);background:var(--cr); }
+.fac h2 { font-family:"EB Garamond",serif;font-size:clamp(1.7rem,3vw,2.3rem);font-weight:700;color:var(--md);margin-bottom:1.5rem; }
+.facGrid { display:flex;flex-direction:column;gap:1rem; }
+.facCard { display:flex;align-items:flex-start;gap:1.2rem;padding:1.3rem 1.4rem;background:var(--wh);border:1px solid var(--st);border-radius:10px;transition:transform .2s,box-shadow .2s; }
+.facCard:hover { transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.07); }
+.facCard span { font-size:2rem;flex-shrink:0;margin-top:.1rem; }
+.facCard h4 { font-family:"EB Garamond",serif;font-size:1.05rem;font-weight:700;color:var(--md);margin-bottom:.3rem; }
+.facCard p { font-size:.84rem;color:var(--im);line-height:1.6; }
